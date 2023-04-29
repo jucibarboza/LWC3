@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  title="Registros de Oportunidades" icon-name="custom:custom50" >
+
+        <div class="slds-m-around_medium">
+            <template lwc:if={opps.data}>
+                <template for:each={opps.data} for:item="opp">
+                    <div key={opp.Id}>
+                        <div class="dados">
+                            <p><b>Id:</b> {opp.Id} </p>
+                             <p><b>Nome:</b> {opp.Name} </p>  
+                             <p><b>Valor:</b> {opp.Amount}</p>  
+                             <p><b>Estágio:</b> {opp.StageName} </p>  
+                             <p><b>Data de Criação:</b> {opp.Create_Date__c}</p>
+                    </div>
+                </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

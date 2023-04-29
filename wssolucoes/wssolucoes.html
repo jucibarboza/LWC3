@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Nova Oportunidade" class="slds-card">
+        <div class="slds-form slds-form_stacked slds-p-around_medium">
+    <form onsubmit={handleSubmit}>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="oportunity-name"><b>Nome da oportunidade</b></label>
+            <div class="slds-form-element__control">
+        <lightning-input type="text" required value={opportunityName} onchange={handleNameChange} name="oportunity-name"></lightning-input>
+            </div>
+        </div>
+
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="opportunity-stage"><b>Fase</b></label>
+        <div class="slds-form-element__control">
+        <select required value={opportunityStage} onchange={handleStageChange} name="opportunity-stage">
+          <option value="">-- Selecione --</option>
+          <option value="Prospecting">Prospecting</option>
+          <option value="Qualification">Qualification</option>
+          <option value="Proposal">Proposal</option>
+          <option value="Negotiation">Negotiation</option>
+          <option value="Closed Won">Closed Won</option>
+          <option value="Closed Lost">Closed Lost</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="oportunity-date"><b>Data de Fechamento</b></label>
+        <div class="slds-form-element__control">
+        <lightning-input type="date" required value={opportunityCloseDate} onchange={handleCloseDateChange} name="oportunity-date"></lightning-input>
+        </div>
+    </div>
+
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="opportunity-amount"><b>Valor estimado</b></label>
+          <div class="slds-form-element__control">
+            <lightning-input type="number" min="0" required value={opportunityAmount} onchange={handleAmountChange} name="oportunity-amount"></lightning-input>
+          </div>
+    </div>
+
+        <div class="slds-m-top_medium">
+            <lightning-button variant="success" type="submit" label="Salvar"></lightning-button>
+            <lightning-button variant="brand" type="submit" label="Corrigir"></lightning-button>
+        </div>
+    </form>
+    </div>
+    </lightning-card>
+</template>
